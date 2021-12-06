@@ -1,0 +1,14 @@
+
+.sidebar-menu-item {
+    margin-bottom: 24px;
+}
+
+.sidebar-menu-link {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #FF6B0A;
+    text-decoration: none;
+}
