@@ -44,7 +44,7 @@
             return result;
         }
 
-        calc();
+        // calc();
 
         const user = {
             name: "Алекс",
@@ -59,13 +59,13 @@
 
         // user.getFullName();
 
-        // const button = document.getElementById("btn");
+        const button = document.getElementById("btn");
         // button.addEventListener("click", calc);
         // button.addEventListener("click", user.getFullName);
         // button.addEventListener("click", user.getFullName.bind(user));
 
         // setTimeout(user.getFullName, 3000);
-        // setTimeout(user.getFullName.bind(user), 3000);
+        setTimeout(user.getFullName.bind(user), 3000);
         // setTimeout(callback, timeout)
         // setTimeout(function(){
         //     console.log(this);

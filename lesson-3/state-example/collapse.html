@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .collapse-title {
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="collapse">
+        <p class="collapse-title">Почему опиум для народа?</p>
+        <p class="collapse-content hidden">Остап, ты задолбал!</p>
+    </div>
+    <script>
+        const items = document.querySelectorAll(".collapse-title");
+        const obj = {
+            click() {
+                console.log(this);
+                // const element = this.nextElementSibling;
+                // if (element.classList.contains("hidden")) {
+                //     element.classList.remove("hidden");
+                // }
+            }
+        };
+        obj.click()
+     items.forEach(item => item.addEventListener("click", obj.click));
+    </script>
+</body>
+
+</html>

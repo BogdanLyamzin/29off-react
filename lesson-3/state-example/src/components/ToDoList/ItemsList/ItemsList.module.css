@@ -1,0 +1,21 @@
+
+.list {
+    flex: 0 0 50%;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.itemImportant {
+    composes: item;
+    font-weight: bold;
+}
+
+.delete {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
