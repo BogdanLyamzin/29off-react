@@ -1,0 +1,25 @@
+.wrapper {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+}
+
+.form, .list {
+    flex: 0 0 50%;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 10px;
+}
