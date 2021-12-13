@@ -1,9 +1,9 @@
 import {Component} from "react";
 import {nanoid} from "nanoid";
 
-import styles from "./FavoriteBooks.module.css";
+import styles from "./BookList.module.css";
 
-class FavoriteBooks extends Component {
+class BookList extends Component {
     authorId = nanoid()
 
     titleId = nanoid()
@@ -21,38 +21,44 @@ class FavoriteBooks extends Component {
         filter: ""
     }
 
-    onAddBook = (e)=> {
+    onAddBook = (e) => {
         e.preventDefault();
         this.setState(prevState => {
             const {author, title, favorite, genre, items} = prevState;
             const newBook = {
-                author, 
+                author,
                 title,
-                favorite, 
+                favorite,
                 genre,
                 id: nanoid()
             };
 
             return {
                 items: [...items, newBook],
-                author: "",
-                title: "",
-                genre: "fantasy",
-                favorite: false
             }
+        })
+        this.resetForm();
+    }
+
+    resetForm = () => {
+        this.setState({
+            author: "",
+            title: "",
+            genre: "fantasy",
+            favorite: false
         })
     }
 
-    handleChange = ({target})=> {
+    handleChange = ({target}) => {
         const {name, value, checked, type} = target;
         const newValue = type === "checkbox" ? checked : value;
         this.setState({[name]: newValue});
-    } 
+    }
 
-    getFilteredBooks = ()=> {
+    getFilteredBooks = () => {
         const {items, filter} = this.state;
         const normalizeFilter = filter.toLowerCase()
-        if(!filter){
+        if (!filter) {
             return items
         }
         const filteredBooks = items.filter(({title, author}) => {
@@ -64,7 +70,7 @@ class FavoriteBooks extends Component {
         return filteredBooks
     }
 
-    render(){
+    render() {
         const {author, title, favorite, genre, filter} = this.state;
         const {onAddBook, handleChange, getFilteredBooks} = this;
 
@@ -81,17 +87,20 @@ class FavoriteBooks extends Component {
                 <h2 className={styles.title}>Список книг</h2>
                 <div className={styles.content}>
                     <form onSubmit={onAddBook} className={styles.form}>
-                    <div className={styles.formGroup}>
+                        <div className={styles.formGroup}>
                             <label className={styles.label} htmlFor={authorId}>Автор книги</label>
-                            <input id={authorId} value={author} name="author" onChange={handleChange} type="text" placeholder="Автор книги" required />
+                            <input id={authorId} value={author} name="author" onChange={handleChange} type="text"
+                                   placeholder="Автор книги" required/>
                         </div>
                         <div className={styles.formGroup}>
                             <label className={styles.label} htmlFor={titleId}>Название книги</label>
-                            <input id={titleId} value={title} name="title" onChange={handleChange} type="text" placeholder="Название книги" required />
+                            <input id={titleId} value={title} name="title" onChange={handleChange} type="text"
+                                   placeholder="Название книги" required/>
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor={favoriteId}>Избранная</label>
-                            <input id={favoriteId} checked={favorite} name="favorite" onChange={handleChange} type="checkbox" />
+                            <input id={favoriteId} checked={favorite} name="favorite" onChange={handleChange}
+                                   type="checkbox"/>
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor={genreId}>Жанр</label>
@@ -103,16 +112,16 @@ class FavoriteBooks extends Component {
                         <button type="submit">Добавить</button>
                     </form>
                     <div className={styles.list}>
-                        <input value={filter} onChange={handleChange} name="filter" type="text" placeholder="Filter" />
+                        <input value={filter} onChange={handleChange} name="filter" type="text" placeholder="Filter"/>
                         <ul>
                             {elements}
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
         )
     }
 }
 
-export default FavoriteBooks;
+export default BookList;

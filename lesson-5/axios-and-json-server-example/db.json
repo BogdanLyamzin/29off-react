@@ -1,0 +1,10 @@
+{
+    "books": [
+      { "id": 1, "author": "Скотт Беккер" , "title": "Второй Апокалипсис" },
+      { "id": 2, "author": "Джим Батчер" , "title": "Перемены" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }

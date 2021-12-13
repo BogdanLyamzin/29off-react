@@ -1,11 +1,11 @@
-import FavoriteBooks from "./client/FavoriteBooks";
+import BookList from "./client/BookList";
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <FavoriteBooks />
+      <BookList />
     </div>
   );
 }
