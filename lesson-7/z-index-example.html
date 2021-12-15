@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar {
+            height: 200px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: red;
+            z-index: 1200;
+        }
+
+        .main {
+            height: calc(100vh - 200px);
+            background-color: green;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal">
+        Modal
+    </div>
+    <div class="navbar">
+        
+    </div>
+    <div class="main"></div>
+</body>
+
+</html>
