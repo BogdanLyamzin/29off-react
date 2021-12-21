@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
