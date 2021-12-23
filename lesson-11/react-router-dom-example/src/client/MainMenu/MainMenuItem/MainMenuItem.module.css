@@ -1,0 +1,12 @@
+.link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: red;
+    color: #fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #000;
+}
